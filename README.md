@@ -1,8 +1,8 @@
 ## Identitas
 
-Nama: 
+Nama: wanda margaretha ujung
 
-NIM : 
+NIM : 607062430002
 
 ## Instruksi
 
