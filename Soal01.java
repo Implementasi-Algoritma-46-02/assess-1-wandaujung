@@ -1,30 +1,25 @@
 import java.util.Scanner;
 
 public class Soal01 {
-
-
-    public static boolean cekValid(String input) {
-
-        return input.length() == 3 &&
-               input.matches("[0-9]+") &&
-               input.charAt(0) < input.charAt(1) &&
-               input.charAt(1) < input.charAt(2) &&
-               (input.charAt(2) - '0') % 2 != 0;
-    }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan deret angka (pisahkan dengan spasi): ");
+        String deretAngka = scanner.nextLine();
 
-        System.out.println("Masukkan lima dengan tiga digit");
+        String[] angkaArray = deretAngka.split(" ");
+        boolean valid = true;
 
-        for (int i = 1; i <= 5; i++) {
-            System.out.print("" + i + ": ");
-            String input = scanner.nextLine();
-
-            String hasil = cekValid(input) ? "valid" : "tidak valid";
-            System.out.println(input + " " + hasil);
+        for (String angka : angkaArray) {
+            if (angka.length() != 3 || angka.charAt(0) == angka.charAt(1)) {
+                valid = false;
+                break;
+            }
         }
 
-        scanner.close(); 
+        if (valid) {
+            System.out.println("Deret angka valid");
+        } else {
+            System.out.println("Deret angka tidak valid");
+        }
     }
 }
